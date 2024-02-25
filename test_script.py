@@ -17,6 +17,9 @@ def main():
     args = parser.parse_args()
     print(args)
     print(f"Using conf {args.conf}")
+    with open(args.conf, "r") as f:
+        conf = yaml.load(f, Loader=yaml.CLoader)
+        print(conf)
     return ret
 
 if __name__ == "__main__":
